@@ -1,0 +1,21 @@
+<div class="info-container" *ngIf="location">
+  <div class="info-section">
+    <span class="info-title">Ip address</span
+    ><span class="info-detail">{{ location.ip }}</span>
+  </div>
+  <div class="info-section">
+    <span class="info-title">Location</span
+    ><span class="info-detail"
+      >{{ location.location.city }}, {{ location.location.region }}
+      {{ location.location.postalCode }}</span
+    >
+  </div>
+  <div class="info-section">
+    <span class="info-title">Timezone</span
+    ><span class="info-detail">UTC {{ location.location.timezone }}</span>
+  </div>
+  <div class="info-section">
+    <span class="info-title">Isp</span
+    ><span class="info-detail">{{ location.isp }}</span>
+  </div>
+</div>

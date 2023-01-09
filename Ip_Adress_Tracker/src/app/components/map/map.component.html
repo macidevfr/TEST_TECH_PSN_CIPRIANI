@@ -1,0 +1,9 @@
+<div
+  *ngIf="location"
+  class="map-container"
+  leaflet
+  [leafletOptions]="options"
+  [leafletLayers]="layers"
+  (leafletMapReady)="onMapReady($event)"
+  (leafletMapZoomEnd)="onMapZoomEnd($event)"
+></div>

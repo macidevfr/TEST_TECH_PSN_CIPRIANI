@@ -1,0 +1,26 @@
+<div class="header">
+  <span class="title"> IP Address Tracker </span>
+  <form>
+    <input
+      [formControl]="searchForm"
+      type="text"
+      placeholder="Search for any IP address or domain"
+      class="search"
+    />
+    <button class="search-button" (click)="search()">
+      <img src="../../../assets/icon-arrow.svg" alt="search" />
+    </button>
+  </form>
+  <div class="infos-card">
+    <app-infos-card [location]="location$ | async"></app-infos-card>
+  </div>
+</div>
+
+<div class="map">
+  <app-map
+    (map$)="receiveMap($event)"
+    (zoom$)="receiveZoom($event)"
+    [location]="location$ | async"
+    id="main-map"
+  ></app-map>
+</div>

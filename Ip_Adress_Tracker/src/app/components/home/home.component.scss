@@ -1,0 +1,116 @@
+:host {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.header {
+  background-image: url("../../../assets/pattern-bg.png");
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .title {
+    font-weight: 500;
+    font-size: 30px;
+    color: #fff;
+    margin: 25px;
+  }
+
+  > form {
+    width: 35%;
+    display: flex;
+    > .search {
+      width: 90%;
+      height: 50px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      font-size: 18px;
+      border: none;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      padding: 0 20px;
+      font-family: inherit;
+
+      > &:focus {
+        outline: none;
+      }
+    }
+
+    > .search-button {
+      width: 10%;
+      height: 50px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+
+      > &:hover {
+        background-color: hsl(0, 0%, 25%);
+      }
+    }
+  }
+  > .infos-card {
+    margin-top: 40px;
+    width: 70%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 65vh;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    > .title {
+      font-size: 20px;
+    }
+    > form {
+      width: 85%;
+      > .search {
+        width: 80%;
+      }
+      > .search-button {
+        width: 20%;
+      }
+    }
+    > .infos-card {
+      width: 85%;
+      margin-top: 15px;
+    }
+  }
+  .map {
+    height: 75vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    > .infos-card {
+      width: calc(90% - 50px);
+      margin-top: 15px;
+    }
+
+    > form {
+      width: 60%;
+      > .search {
+        width: 80%;
+      }
+      > .search-button {
+        width: 20%;
+      }
+    }
+  }
+}
