@@ -12,21 +12,7 @@ import { Map } from 'leaflet';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  // location$: Observable<Location> = this.ipService.getLocationInfos();
-  location$: Observable<Location> = of({
-    ip: '192.47.586.47',
-    location: {
-      country: 'France',
-      region: 'Île-de-France',
-      city: 'Paris',
-      lat: 48.8566,
-      lng: 2.3522,
-      postalCode: '75000',
-      timezone: 'Europe/Paris',
-      geonameId: 2988507,
-    },
-    isp: 'Free SAS',
-  });
+  location$: Observable<Location> = this.ipService.getLocationInfos();
   searchForm: FormControl = new FormControl('');
   private map: Map;
   private zoom: number;
